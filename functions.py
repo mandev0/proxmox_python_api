@@ -1,16 +1,10 @@
-from django.utils.translation import ugettext as TranslatedText
-from django.template.loader import render_to_string
-from django.core.mail import EmailMessage
-from django.utils import translation
-from django.http import HttpResponse
-from django.http import JsonResponse
 import requests, logging, random, json
 
 #-------------------------#
 #- Proxmox API Functions -#
 #-------------------------#
 ## Proxmox API Info
-# Example values need to be change. No this keys are not valid :)
+# Example values need to be change. No, this keys are not valid :)
 TOKEN_NAME = 'root@pam!restapi'
 API_TOKEN = 'eea680c4-4356-48c7-bdd3-d36a973cf56b'
 API_URL = 'https://10.10.50.41:8006/api2/json'
@@ -32,7 +26,7 @@ def Send_Request(Method, Func, Data={}):
     else:
         return 'Wrong HTTP Method given!'
 
-    return HttpResponse(Response), Response, Response.text
+    return Response, Response.text
 
 ## List Nodes in Cluster
 def List_Nodes():
